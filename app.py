@@ -3,9 +3,19 @@ import streamlit.components.v1 as components
 from groq import Groq
 
 st.set_page_config(page_title="초파리 디지털 트윈", layout="wide")
+st.markdown(
+    """
+    <head>
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="🪰 초파리 디지털 트윈 (Drosophila Digital Twin)">
+      <meta property="og:description" content="75% 인간 유전자 상동성 기반 초파리 디지털 트윈">
+      <meta property="og:image" content="https://raw.githubusercontent.com/winmin09/drosophila-digital-twin/main/thumbnail.png">
+    </head>
+    """,
+    unsafe_allow_html=True
+)
 st.title("🪰 초파리 디지털 트윈")
 
-# Streamlit Secrets(보안 설정)에서 API 키를 안전하게 불러옴
 MY_GROQ_KEY = st.secrets.get("GROQ_API_KEY", "")
 
 
